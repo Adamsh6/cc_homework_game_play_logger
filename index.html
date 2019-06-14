@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Game Play Logging App</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <form id="new-item-form">
+      <label for="game">Game:</label>
+      <input type='text' name='game' id='game'/>
+      <!-- Radio Buttons for type of game -->
+      <label for="victor">Victor:</label>
+      <input type='text' name='victor' id='victor'/>
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date">
+
+      <div id="radio-buttons">
+      <input type="radio" id="game-type1" name="gameType" value="Board Game">
+      <label for="game-type1">Board Game</label>
+
+      <input type="radio" id="game-type2" name="gameType" value="Card Game">
+      <label for="game-type2">Card Game</label>
+
+      <input type="radio" id="game-type3" name="gameType" value="Video Game">
+      <label for="game-type3">Video Game</label>
+      </div>
+
+
+      <input type="submit" value="Save"/>
+    </form>
+
+    <form id="delete">
+      <input type="button" value="Delete All"/>
+    </form>
+
+    <h1>Game Logs</h1>
+    <div id="play-logs"></div>
+  </body>
+</html>
