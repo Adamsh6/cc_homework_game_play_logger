@@ -8,17 +8,24 @@
   </head>
   <body>
     <form id="new-item-form">
+      <div class='form-item'>
       <label for="game">Game:</label>
-      <input type='text' name='game' id='game'/>
-      <!-- Radio Buttons for type of game -->
+      <input type='text' name='game' id='game' required/>
+      </div>
+      
+      <div class='form-item'>
       <label for="victor">Victor:</label>
-      <input type='text' name='victor' id='victor'/>
+      <select name='victor' id='victor' required>
+      </select>
+      </div>
 
+      <div class='form-item'>
       <label for="date">Date:</label>
       <input type="date" id="date" name="date">
+      </div>
 
-      <div id="radio-buttons">
-      <input type="radio" id="game-type1" name="gameType" value="Board Game">
+      <div id="radio-buttons" class='form-item'>
+      <input type="radio" id="game-type1" name="gameType" value="Board Game" selected>
       <label for="game-type1">Board Game</label>
 
       <input type="radio" id="game-type2" name="gameType" value="Card Game">
@@ -35,8 +42,23 @@
     <form id="delete">
       <input type="button" value="Delete All"/>
     </form>
+    <div>
+      <form id="add-player-form">
+        <input type='text' name='addPlayer' id='add-player' required/>
+        <input type="submit" value="Add Player"/>
+      </form>
+
+    <table id="win-table">
+      <tr>
+        <th>Name</th>
+        <th>Wins</th>
+      </tr>
+    </table>
 
     <h1>Game Logs</h1>
     <div id="play-logs"></div>
+
+
+    </div>
   </body>
 </html>
