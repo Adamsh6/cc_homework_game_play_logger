@@ -3,16 +3,31 @@
   <head>
     <meta charset="utf-8">
     <title>Game Play Logging App</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <script src="js/app.js"></script>
   </head>
   <body>
+    <div class="players">
+      <form id="add-player-form">
+        <input type='text' name='addPlayer' id='add-player' required class="form-item"/>
+        <input type="submit" value="Add Player" class="form-item"/>
+      </form>
+
+    <table id="win-table">
+      <tr>
+        <th>Name</th>
+        <th>Wins</th>
+      </tr>
+    </table>
+    </div>
+    <div class="logs">
     <form id="new-item-form">
       <div class='form-item'>
       <label for="game">Game:</label>
       <input type='text' name='game' id='game' required/>
       </div>
-      
+
       <div class='form-item'>
       <label for="victor">Victor:</label>
       <select name='victor' id='victor' required>
@@ -36,29 +51,20 @@
       </div>
 
 
-      <input type="submit" value="Save"/>
+      <input type="submit" value="Save" class="form-item"/>
     </form>
 
+
+  <div class="log-heading">
+
+
+    <h1>Game Logs
     <form id="delete">
-      <input type="button" value="Delete All"/>
+      <input type="button" value="Delete All" class="form-item"/>
     </form>
-    <div>
-      <form id="add-player-form">
-        <input type='text' name='addPlayer' id='add-player' required/>
-        <input type="submit" value="Add Player"/>
-      </form>
-
-    <table id="win-table">
-      <tr>
-        <th>Name</th>
-        <th>Wins</th>
-      </tr>
-    </table>
-
-    <h1>Game Logs</h1>
+    </h1>
+    </div>
     <div id="play-logs"></div>
-
-
     </div>
   </body>
 </html>

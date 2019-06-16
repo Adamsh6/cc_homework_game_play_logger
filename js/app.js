@@ -1,11 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('#new-item-form')
   form.addEventListener('submit', handleFormSubmission)
-  console.dir(form)
 
   setDate(form)
-
-  const wins = {}
 
   const addPlayerForm = document.querySelector('#add-player-form')
   addPlayerForm.addEventListener('submit', handleAddPlayer)
@@ -27,33 +24,47 @@ const handleAddPlayer = function (event) {
   event.preventDefault();
   //Add player to table and selector
   const player = this.addPlayer.value
+
   const selector = document.querySelector('#victor')
   selector.insertAdjacentHTML('beforeend', `<option>${player}</option>`)
+
   const table = document.querySelector('#win-table')
   table.insertAdjacentHTML('beforeend',
   `<tr><td>${player}</td><td id='${player}-wins'>0</td></tr>`)
+  this.reset()
 }
 
 const handleFormSubmission = function (event) {
   event.preventDefault();
   const playLogs = document.querySelector('#play-logs')
 
-  const logContainer = document.createElement('div')
-  logContainer.classList.add('log')
-  const victor = document.createElement('h2')
-  const game = document.createElement('h3')
-  const date = document.createElement('p')
-
+  const logContainer = createLogItem(event.target)
   playLogs.appendChild(logContainer)
-  logContainer.appendChild(victor)
-  logContainer.appendChild(game)
-  logContainer.appendChild(date)
-
-  victor.textContent = "Victor: " + this.victor.value
-  game.textContent = this.game.value + ' : ' + this.gameType.value
-  date.textContent = this.date.value
 
   addWin(this.victor.value)
+
+  this.reset()
+  setDate(this)
+}
+
+const createLogItem = function (form) {
+
+  const logContainer = document.createElement('div')
+  logContainer.classList.add('log')
+
+  const victor = document.createElement('h2')
+  victor.textContent = form.victor.value
+  logContainer.appendChild(victor)
+
+  const game = document.createElement('p')
+  game.textContent = `${form.game.value} : ${form.gameType.value}`
+  logContainer.appendChild(game)
+
+  const date = document.createElement('p')
+  date.textContent = form.date.value
+  logContainer.appendChild(date)
+
+  return logContainer
 }
 
 const addWin = function (victor) {

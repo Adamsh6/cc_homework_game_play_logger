@@ -1,7 +1,97 @@
+/* html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+} */
+
+
+body {
+  margin: 1em;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-image: url(https://pixel.nymag.com/imgs/daily/vulture/2013/12/18/cones-of-dunshire/Cones-of-Dunshire-Next-stage-6.nocrop.w710.h2147483647.2x.jpg);
+  background-color: #FFFFFF25;
+}
+
 table, th, td {
   border: 1px solid black;
+  background-color: white;
 }
 
 table {
   border-collapse: collapse;
-};
+  width: 100%;
+  text-align: center;
+}
+
+.players {
+  float:right;
+  width: 24%;
+}
+
+.logs {
+  float:left;
+  width: 74%;
+}
+
+.form-item {
+  margin: 0.5em 0;
+}
+
+#new-item-form {
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 1em;
+  align-self: center;
+  width: 20em;
+  background-color: white;
+  /* margin: 0 5em; */
+}
+
+#delete {
+  margin-left: 0.5em;
+  display: inline-block;
+  /* margin: auto; */
+  margin-bottom: 0.2em;
+}
+
+h1 {
+  /* margin: 0 5em; */
+  background-color: white;
+  width: 10em;
+  border-radius: 0.5em;
+  text-align: center;
+}
+
+#play-logs {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.log {
+border: 3px solid black;
+width: 25%;
+padding: 0.2em;
+margin: 0.4em;
+border-bottom: 1px solid;
+border-right: 1px solid;
+text-align: center;
+height: auto;
+background-color: white;
+border-radius: 1em;
+}
